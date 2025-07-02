@@ -1,10 +1,10 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Taymaz Akan",
+    "email": "taymaz.farshi@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://taymazakan.github.io",
+    "summary": "Currently employed at LSU Health. Expert in medical image informatics, deep learning, and optimization. Postdoctoral researcher at LSUHSC. Ph.D. in Computer Engineering (Gazi University).",
     "location": {
       "address": "",
       "postalCode": "",
@@ -16,12 +16,12 @@
       {
         "network": "Google Scholar",
         "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "url": "https://scholar.google.com/citations?user=l67ZmagAAAAJ&hl=en"
       },
       {
         "network": "ORCID",
         "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "url": "https://orcid.org/0000-0003-4070-1058"
       },
       {
         "network": "GitHub",
@@ -33,11 +33,11 @@
   "work": [],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
+      "institution": "LSU Healt Shreveport",
+      "area": "Ph.D in Computer Science",
       "studyType": "",
       "startDate": "",
-      "endDate": "2018",
+      "endDate": "",
       "gpa": null,
       "courses": []
     },
