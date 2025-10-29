@@ -7,39 +7,60 @@ author_profile: true
 
 ## Research Interests
 
-My research focuses on medical image informatics, deep learning, and optimization techniques applied to healthcare challenges.
+My primary research interests lie in developing innovative computational methods for medical image analysis, with a focus on deep learning architectures, metaheuristic optimization algorithms, and their applications in healthcare informatics. I am particularly interested in bridging the gap between advanced AI techniques and clinical practice to improve diagnostic accuracy and patient outcomes.
 
-### Current Research Areas
+### Core Research Areas
 
-**Medical Image Analysis**
-- Advanced deep learning architectures for medical image segmentation
-- Multi-modal medical image processing and fusion
+**Image Processing**
+- Medical image segmentation and classification
+- Multi-modal image analysis
+- 3D image processing and volumetric analysis
+- Video analysis and temporal processing
+- Image enhancement and feature extraction
 - Computer-aided diagnosis systems
 
-**Deep Learning & AI**
-- Novel neural network architectures for healthcare applications
-- Transfer learning in medical imaging
-- Explainable AI for clinical decision support
+**Deep Learning**
+- Vision Transformers for medical imaging
+- Convolutional Neural Networks (CNNs) for disease diagnosis
+- Deep learning architectures for 3D medical data
+- Transfer learning and domain adaptation in healthcare
 
-**Optimization Methods**
-- Metaheuristic optimization algorithms
-- Feature selection and dimensionality reduction
-- Multi-objective optimization in healthcare
+**Medical Imaging**
+- Alzheimer's disease diagnosis from MRI
+- Cardiovascular disease detection
+- Brain imaging analysis
+- Disease progression modeling
 
-### Research Projects
+**Metaheuristic Optimization**
+- Battle Royale Optimizer (BRO) - novel optimization algorithm
+- Multi-objective optimization
+- Evolutionary algorithms for image processing
+- Optimization of neural network hyperparameters
 
-#### Ongoing Projects
-- Development of AI-based diagnostic tools for medical imaging
-- Advanced segmentation techniques for radiological images
-- Integration of multi-modal data for improved clinical outcomes
+### Featured Research Contributions
 
-#### Past Projects
-- [Add your completed research projects here]
+**Novel Optimization Algorithms**
+- Developed the Battle Royale Optimizer (BRO), a population-based metaheuristic algorithm inspired by battle royale games
+- Extended BRO for multi-objective optimization (MOBRO) and multi-level image thresholding
 
-### Research Goals
+**Medical Image Analysis**
+- Vision Transformers and Bi-LSTM for Alzheimer's disease diagnosis from 3D MRI
+- Joint Transformer architectures for brain MRI classification
+- Advanced deep learning models for cardiovascular disease detection
 
-My long-term research goal is to develop innovative AI-driven solutions that can improve diagnostic accuracy, reduce healthcare costs, and ultimately enhance patient outcomes through advanced medical image analysis and informatics.
+**Applications in Healthcare**
+- Disease progression models for neurodegenerative disorders
+- MRI image optimization techniques
+- Clinical decision support systems
+
+### Current Research Focus
+
+At LSU Health Shreveport, my research focuses on:
+- Optimizing MRI images for enhanced diagnostic accuracy
+- Developing disease progression models using machine learning and deep learning
+- Investigating cardiovascular, psychiatric, and neurobehavioral health outcomes
+- Applications of AI in addiction research (methamphetamine and cocaine studies)
 
 ---
 
-For more details about specific publications, please visit the [Publications](/publications/) page.
+For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=l67ZmagAAAAJ&hl=en) or browse the [Publications](/publications/) page.
