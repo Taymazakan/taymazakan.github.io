@@ -1,1 +1,1 @@
-Taymaz AKan
+Taymaz Akan
