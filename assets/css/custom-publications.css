@@ -1,8 +1,8 @@
-/* Grid layout for journal badges only */
+/* Grid layout for journal badges */
 
 .journal-badges-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 30px;
   margin: 30px 0;
 }
@@ -11,21 +11,55 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
 }
 
-.journal-badge-item img {
+/* Side by side layout: journal logo | SJR badge */
+.journal-logo-sjr-pair {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.journal-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.journal-logo img {
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: contain;
+  display: block;
+}
+
+.sjr-badge {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sjr-badge img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-.journal-badge-item a {
+.sjr-badge a {
   display: block;
   border: none;
   text-decoration: none;
 }
 
-.journal-badge-item a:hover {
+.sjr-badge a:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
