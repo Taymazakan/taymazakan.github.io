@@ -1,0 +1,65 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign categories_max = 0 %}
+{% for category in site.publication_category %}
+  {% assign category_size = site.publications | where: "category", category[0] | size %}
+  {% if category_size > categories_max %}
+    {% assign categories_max = category_size %}
+  {% endif %}
+{% endfor %}
+
+<ul class="taxonomy__index">
+  {% for category in site.publication_category %}
+    {% assign category_size = site.publications | where: "category", category[0] | size %}
+    {% if category_size > 0 %}
+      <li>
+        <a href="#{{ category[0] }}">
+          <strong>{{ category[1].title }}</strong> <span class="taxonomy__count">{{ category_size }}</span>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+{% for category in site.publication_category %}
+  {% assign category_size = site.publications | where: "category", category[0] | size %}
+  {% if category_size > 0 %}
+    <section id="{{ category[0] }}" class="taxonomy__section">
+      <h2 class="archive__subtitle">{{ category[1].title }}</h2>
+      <div class="entries-{{ page.entries_layout | default: 'list' }}">
+        {% assign publications = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+        {% for post in publications %}
+          <div class="list__item">
+            <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+              <div class="archive__item-content">
+                {% if post.scimago_id %}
+                  <div class="archive__item-journal-badge">
+                    <a href="https://www.scimagojr.com/journalsearch.php?q={{ post.scimago_id }}&tip=sid&exact=no" title="SCImago Journal & Country Rank" target="_blank">
+                      <img border="0" src="https://www.scimagojr.com/journal_img.php?id={{ post.scimago_id }}" alt="SCImago Journal & Country Rank">
+                    </a>
+                  </div>
+                {% elsif post.journal_image %}
+                  <div class="archive__item-journal-badge">
+                    <img src="{{ post.journal_image | relative_url }}" alt="{{ post.journal }}">
+                  </div>
+                {% endif %}
+                
+                <p class="archive__item-excerpt" itemprop="description">
+                  {{ post.authors }}<br>
+                  <em>{{ post.journal }}</em>
+                  {% if post.volume %}, {{ post.volume }}{% endif %}{% if post.issue %}({{ post.issue }}){% endif %}{% if post.pages %}, {{ post.pages }}{% endif %}
+                  {% if post.year %} ({{ post.year }}){% endif %}
+                  {% if post.doi %}<br>DOI: <a href="https://doi.org/{{ post.doi }}" target="_blank">{{ post.doi }}</a>{% endif %}
+                </p>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
