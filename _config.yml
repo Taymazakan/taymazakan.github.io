@@ -24,59 +24,38 @@ author:
   # Biographic information
   avatar           : "profile.jpg"
   name             : "Taymaz Akan"
-  pronouns         : # example: "she/her"  
   bio              : "Expert in medical image informatics, deep learning, and optimization. Postdoctoral researcher at LSUHSC. Ph.D. in Computer Engineering (Gazi University)."
-  #location         : "Earth"
   employer         : "LSU Health Shreveport"
-  #uri              : # URL
-  email            : "taymaz.farshi@gmail.com" 
-  <p style="color: white; font-size: 14px;">taymaz[dot]farshi@gmail[dot]com</p>
+  email            : "taymaz.farshi@gmail.com"
 
   # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
+  academia         : # example: "https://www.academia.edu/yourname"
+  arxiv            : # example: "https://arxiv.org/a/your_id.html"
   googlescholar    : "https://scholar.google.com/citations?user=l67ZmagAAAAJ&hl=en"
-  impactstory      : # URL
+  impactstory      : # example: "https://profiles.impactstory.org/u/your_id"
   orcid            : "https://orcid.org/0000-0003-4070-1058"
-  semantic         : # URL
-  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
+  semantic         : # example: "https://www.semanticscholar.org/author/your_id"
+  pubmed           : # example: "https://pubmed.ncbi.nlm.nih.gov/?term=your_name"
+  researchgate     : # example: "https://www.researchgate.net/profile/yourname"
+  scopus           : # example: "https://www.scopus.com/authid/detail.uri?authorId=your_id"
 
   # Repositories and software development
-  #bitbucket        : # Username - Update with your username on the site
-  codepen          : # Username
-  dribbble         : # Username
-  github           : "Taymazakan"
-  kaggle           : # Username  
-  stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
+  github           : "taymazakan"
+  bitbucket        : # "your-bitbucket-username"
+  kaggle           : # "your-kaggle-username"
+  stackoverflow    : # "your-stackoverflow-id"
 
-  # Social media
-  artstation       : # Username
-  bluesky          : #"bsky.app" # Replace this with you Bluesky username
-  facebook         : # Username
-  flickr           : # Username
-  foursquare       : # Username
-  goodreads        : # Username
-  google_plus      : # Username
-  keybase          : # Username
-  instagram        : # Username
-  lastfm           : # Username
+  # Social media (safe to leave empty until needed)
   linkedin         : "taymaz-akan-69333462"
-  mastodon         : # URL
-  medium           : # URL
-  pinterest        : # Username
-  soundcloud       : # Username
-  steam            : # Username
-  telegram         : # URL
-  tumblr           : # Username
-  twitter          : # Username for X / Twitter
-  vine             : # Username
-  weibo            : # Username
-  wikipedia        : # Username
-  xing             : # Username
-  youtube          : # Username
-  zhihu            : # Username
+  twitter          : # "yourtwitter"
+  instagram        : # "yourinsta"
+  medium           : # "https://medium.com/@yourname"
+  bluesky          : # "yourname.bsky.social"
+  mastodon         : # "https://mastodon.social/@yourname"
+  youtube          : # "yourchannelid"
+  facebook         : # "yourfb"
+  telegram         : # "https://t.me/yourhandle"
+
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
