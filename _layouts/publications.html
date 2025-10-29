@@ -18,7 +18,7 @@ layout: archive
     {% if category_size > 0 %}
       <li>
         <a href="#{{ category[0] }}">
-          #<strong>{{ category[1].title }}</strong> <span class="taxonomy__count">{{ category_size }}</span>
+          <strong>{{ category[1].title }}</strong> <span class="taxonomy__count">{{ category_size }}</span>
         </a>
       </li>
     {% endif %}
@@ -33,13 +33,23 @@ layout: archive
       <div class="journal-badges-grid">
         {% assign publications = site.publications | where: "category", category[0] | sort: "date" | reverse %}
         {% for post in publications %}
-          {% if post.scimago_id %}
-            <div class="journal-badge-item">
-              <a href="https://www.scimagojr.com/journalsearch.php?q={{ post.scimago_id }}&tip=sid&exact=no" title="SCImago Journal & Country Rank" target="_blank">
-                <img border="0" src="https://www.scimagojr.com/journal_img.php?id={{ post.scimago_id }}" alt="SCImago Journal & Country Rank">
-              </a>
+          <div class="journal-badge-item">
+            <div class="journal-logo-sjr-pair">
+              {% if post.journal_image %}
+                <div class="journal-logo">
+                  <img src="{{ post.journal_image | relative_url }}" alt="{{ post.journal }}">
+                </div>
+              {% endif %}
+              
+              {% if post.scimago_id %}
+                <div class="sjr-badge">
+                  <a href="https://www.scimagojr.com/journalsearch.php?q={{ post.scimago_id }}&tip=sid&exact=no" title="SCImago Journal & Country Rank" target="_blank">
+                    <img border="0" src="https://www.scimagojr.com/journal_img.php?id={{ post.scimago_id }}" alt="SCImago Journal & Country Rank">
+                  </a>
+                </div>
+              {% endif %}
             </div>
-          {% endif %}
+          </div>
         {% endfor %}
       </div>
     </section>
