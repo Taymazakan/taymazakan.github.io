@@ -1,28 +1,31 @@
-/* Custom styles for publications with journal ScimagoJR badges */
+/* Grid layout for journal badges only */
 
-.archive__item-journal-badge {
-  margin-bottom: 15px;
-  text-align: left;
+.journal-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
 }
 
-.archive__item-journal-badge img {
-  max-height: 100px;
+.journal-badge-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journal-badge-item img {
+  max-width: 100%;
   height: auto;
-  width: auto;
   display: block;
 }
 
-.list__item {
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
+.journal-badge-item a {
+  display: block;
+  border: none;
+  text-decoration: none;
 }
 
-.list__item:last-child {
-  border-bottom: none;
-}
-
-.archive__item-excerpt {
-  margin-top: 10px;
-  line-height: 1.6;
+.journal-badge-item a:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
