@@ -29,9 +29,6 @@ I am always interested in collaborating with researchers, clinicians, and indust
 - Consulting on medical imaging and AI solutions
 - Product development and validation
 
-### Current Collaborations
-
-[Add your current collaborators and institutions here]
 
 ### How to Collaborate
 
