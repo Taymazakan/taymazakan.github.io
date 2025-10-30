@@ -3,15 +3,15 @@
 .journal-badges-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 30px;
-  margin: 30px 0;
+  gap: 5px;
+  margin: 5px 0;
 }
 
 .journal-badge-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 5px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   background: #fff;
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   width: 100%;
   flex-wrap: nowrap;
 }
