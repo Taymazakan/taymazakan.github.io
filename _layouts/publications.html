@@ -2,6 +2,63 @@
 layout: archive
 ---
 
+<style>
+/* Inline styles for journal badges */
+.journal-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.journal-badge-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.journal-logo-sjr-pair {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 20px !important;
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+}
+
+.journal-logo {
+  flex: 0 0 140px !important;
+  width: 140px !important;
+  height: 200px !important;
+  overflow: hidden !important;
+}
+
+.journal-logo img {
+  width: 140px !important;
+  height: 200px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.sjr-badge {
+  flex: 0 0 auto !important;
+}
+
+.sjr-badge img {
+  display: block !important;
+}
+
+.sjr-badge a {
+  display: block !important;
+  border: none !important;
+}
+</style>
+
 {{ content }}
 
 {% assign categories_max = 0 %}
