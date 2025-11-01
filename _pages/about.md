@@ -86,8 +86,8 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slide img {
-  width: 260px;
-  height: 350px;
+  width: 210px;
+  height: 285px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
