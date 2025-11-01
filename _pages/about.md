@@ -10,6 +10,15 @@ redirect_from:
 I am a postdoctoral fellow at Louisiana State University Health Sciences Center (LSUHSC), where I focus on deep learning, medical image analysis, and clinical AI applications. I earned my Ph.D. in Computer Engineering from Gazi University (Turkey), where I developed a fully automatic color image segmentation algorithm using multimodal optimization techniques. Prior to LSUHSC, I completed a postdoctoral research appointment at the University of Pardubice (Czech Republic), working on classification and localization systems. My research interests span video transformers for 3D medical imaging, topological data analysis, and metaheuristic optimization. I have published extensively, served as associate editor and reviewer for international journals, and held visiting academic positions across Europe..
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Publications Carousel</title>
+</head>
+<body>
+
 <section id="featured-publications" style="text-align:center; margin: 60px 0;">
   <h2>Featured Publications</h2>
   <div class="pub-carousel">
@@ -51,13 +60,17 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
     </button>
     
     <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
     </div>
   </div>
 </section>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 #featured-publications {
   max-width: 1000px;
   margin: 0 auto;
@@ -78,10 +91,12 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   display: flex;
   transition: transform 0.6s ease;
   gap: 20px;
+  width: fit-content;
 }
 
 .slide {
-  flex: 0 0 calc(33.33% - 13.33px);
+  flex: 0 0 auto;
+  width: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,6 +144,10 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 .arrow svg {
   color: #333;
 }
@@ -168,60 +187,77 @@ h2 {
 </style>
 
 <script>
+console.log('Script loading...');
+
 const slidesContainer = document.querySelector('.slides');
 const dots = document.querySelectorAll('.dot');
 const arrowLeft = document.querySelector('.arrow-left');
 const arrowRight = document.querySelector('.arrow-right');
+const slides = document.querySelectorAll('.slide');
 
 let currentIndex = 0;
-const slidesPerView = 3;
-const totalSlides = document.querySelectorAll('.slide').length;
-const totalPages = 2; // We have 4 slides, showing 3 at a time = 2 pages
 
 function showSlides(index) {
-  // For first page (index 0): show slides 0,1,2
-  // For second page (index 1): show slide 3 (the 4th one)
-  let offset;
-  if (index === 0) {
-    offset = 0;
-  } else {
-    // Calculate how much to move to show the last slide
-    // Move by the width of 3 slides plus gaps
-    offset = 100;
-  }
+  console.log('Showing slide index:', index);
   
-  slidesContainer.style.transform = `translateX(-${offset}%)`;
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  // Calculate the offset based on slide width + gap
+  const slideWidth = 230; // width of each slide including gap
+  const offset = index * (slideWidth * 3); // Move by 3 slides worth
+  
+  slidesContainer.style.transform = `translateX(-${offset}px)`;
+  
+  // Update dots
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  
+  currentIndex = index;
 }
 
 function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalPages;
-  showSlides(currentIndex);
+  console.log('Next clicked, current index:', currentIndex);
+  const newIndex = currentIndex === 0 ? 1 : 0;
+  showSlides(newIndex);
 }
 
 function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalPages) % totalPages;
-  showSlides(currentIndex);
+  console.log('Prev clicked, current index:', currentIndex);
+  const newIndex = currentIndex === 0 ? 1 : 0;
+  showSlides(newIndex);
 }
 
 // Arrow click handlers
-arrowLeft.addEventListener('click', prevSlide);
-arrowRight.addEventListener('click', nextSlide);
+arrowLeft.addEventListener('click', function(e) {
+  console.log('Left arrow clicked');
+  e.preventDefault();
+  prevSlide();
+});
+
+arrowRight.addEventListener('click', function(e) {
+  console.log('Right arrow clicked');
+  e.preventDefault();
+  nextSlide();
+});
 
 // Dot click handlers
 dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentIndex = i;
-    showSlides(currentIndex);
+  dot.addEventListener('click', function(e) {
+    console.log('Dot clicked:', i);
+    e.preventDefault();
+    showSlides(i);
   });
 });
 
 // Auto slide every 5 seconds
 setInterval(() => {
-  currentIndex = (currentIndex + 1) % totalPages;
-  showSlides(currentIndex);
+  nextSlide();
 }, 5000);
 
 // Initialize
+console.log('Initializing carousel...');
+console.log('Total slides:', slides.length);
 showSlides(0);
 </script>
+
+</body>
+</html>
