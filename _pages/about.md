@@ -12,8 +12,13 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 
 <section id="featured-publications" style="text-align:center; margin: 60px 0;">
   <h2>Featured Publications</h2>
-
   <div class="pub-carousel">
+    <button class="arrow arrow-left" aria-label="Previous">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
     <div class="slides">
       <div class="slide">
         <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
@@ -36,7 +41,13 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
         </a>
       </div>
     </div>
-
+    
+    <button class="arrow arrow-right" aria-label="Next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+    
     <div class="dots">
       <span class="dot active"></span>
       <span class="dot"></span>
@@ -53,6 +64,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 .pub-carousel {
   position: relative;
   overflow: hidden;
+  padding: 0 50px;
 }
 
 .slides {
@@ -77,6 +89,41 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 
 .slide img:hover {
   transform: scale(1.05);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.arrow:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.arrow svg {
+  color: #333;
+}
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
 }
 
 .dots {
@@ -108,6 +155,9 @@ h2 {
 <script>
 const slidesContainer = document.querySelector('.slides');
 const dots = document.querySelectorAll('.dot');
+const arrowLeft = document.querySelector('.arrow-left');
+const arrowRight = document.querySelector('.arrow-right');
+
 let currentIndex = 0;
 const slidesPerView = 3;
 const totalSlides = document.querySelectorAll('.slide').length;
@@ -119,6 +169,21 @@ function showSlides(index) {
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
 
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalPages;
+  showSlides(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+  showSlides(currentIndex);
+}
+
+// Arrow click handlers
+arrowLeft.addEventListener('click', prevSlide);
+arrowRight.addEventListener('click', prevSlide);
+
+// Dot click handlers
 dots.forEach((dot, i) => {
   dot.addEventListener('click', () => {
     currentIndex = i;
