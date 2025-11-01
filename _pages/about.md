@@ -64,16 +64,17 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 .pub-carousel {
   position: relative;
   overflow: hidden;
-  padding: 0 50px;
+  padding: 0 60px;
 }
 
 .slides {
   display: flex;
   transition: transform 0.6s ease;
+  gap: 20px;
 }
 
 .slide {
-  flex: 0 0 33.33%;
+  flex: 0 0 calc(33.33% - 14px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,11 +120,11 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .arrow-left {
-  left: 10px;
+  left: 0;
 }
 
 .arrow-right {
-  right: 10px;
+  right: 0;
 }
 
 .dots {
