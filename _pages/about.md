@@ -69,9 +69,10 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slides-wrapper {
-  overflow: hidden;
-  padding: 15px;
-  margin: -15px;
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 15px 0;
+  margin: -15px 0;
 }
 
 .slides {
@@ -182,10 +183,8 @@ const totalSlides = document.querySelectorAll('.slide').length;
 const totalPages = Math.ceil(totalSlides / slidesPerView);
 
 function showSlides(index) {
-  // Calculate the offset including the gap
-  const slideWidth = 100 / slidesPerView;
-  const gapPercentage = (20 / slidesContainer.parentElement.offsetWidth) * 100;
-  const offset = index * (slideWidth * slidesPerView + gapPercentage * (slidesPerView - 1));
+  // Simple calculation: move by 100% for each page
+  const offset = index * 100;
   slidesContainer.style.transform = `translateX(-${offset}%)`;
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
