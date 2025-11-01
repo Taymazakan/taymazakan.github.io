@@ -19,26 +19,28 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
       </svg>
     </button>
     
-    <div class="slides">
-      <div class="slide">
-        <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
-          <img src="/images/papers/Alzhformer.png" alt="AlzhFormer">
-        </a>
-      </div>
-      <div class="slide">
-        <a href="https://www.nature.com/articles/s41598-024-59578-3" target="_blank">
-          <img src="/images/papers/JointTransformer.png" alt="JointTransformer">
-        </a>
-      </div>
-      <div class="slide">
-        <a href="https://www.sciencedirect.com/science/article/pii/S0022510X25003557" target="_blank">
-          <img src="/images/papers/NeuroDeepReview.png" alt="NeuroDeepReview">
-        </a>
-      </div>
-      <div class="slide">
-        <a href="https://link.springer.com/article/10.1007/s10278-024-01336-y" target="_blank">
-          <img src="/images/papers/ViViEchoformer.png" alt="ViViEchoformer">
-        </a>
+    <div class="slides-wrapper">
+      <div class="slides">
+        <div class="slide">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
+            <img src="/images/papers/Alzhformer.png" alt="AlzhFormer">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.nature.com/articles/s41598-024-59578-3" target="_blank">
+            <img src="/images/papers/JointTransformer.png" alt="JointTransformer">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0022510X25003557" target="_blank">
+            <img src="/images/papers/NeuroDeepReview.png" alt="NeuroDeepReview">
+          </a>
+        </div>
+        <div class="slide">
+          <a href="https://link.springer.com/article/10.1007/s10278-024-01336-y" target="_blank">
+            <img src="/images/papers/ViViEchoformer.png" alt="ViViEchoformer">
+          </a>
+        </div>
       </div>
     </div>
     
@@ -63,8 +65,11 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 
 .pub-carousel {
   position: relative;
-  overflow: hidden;
   padding: 0 60px;
+}
+
+.slides-wrapper {
+  overflow: hidden;
 }
 
 .slides {
@@ -81,8 +86,8 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slide img {
-  width: 210px;
-  height: 285px;
+  width: 260px;
+  height: 350px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
@@ -165,7 +170,10 @@ const totalSlides = document.querySelectorAll('.slide').length;
 const totalPages = Math.ceil(totalSlides / slidesPerView);
 
 function showSlides(index) {
-  const offset = index * (100 / totalPages);
+  // Calculate the offset including the gap
+  const slideWidth = 100 / slidesPerView;
+  const gapPercentage = (20 / slidesContainer.parentElement.offsetWidth) * 100;
+  const offset = index * (slideWidth * slidesPerView + gapPercentage * (slidesPerView - 1));
   slidesContainer.style.transform = `translateX(-${offset}%)`;
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
@@ -182,7 +190,7 @@ function prevSlide() {
 
 // Arrow click handlers
 arrowLeft.addEventListener('click', prevSlide);
-arrowRight.addEventListener('click', prevSlide);
+arrowRight.addEventListener('click', nextSlide);
 
 // Dot click handlers
 dots.forEach((dot, i) => {
