@@ -56,9 +56,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 .pub-carousel {
   position: relative;
   overflow: hidden;
-  padding: 0 60px; /* adds space for arrows */
-  background-color: #2e2e2e; /* optional: matches your screenshot’s dark bg */
-  border-radius: 10px;
 }
 
 .slides {
@@ -75,51 +72,55 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slide img {
-  width: 260px;
-  height: 350px;
+  width: 210px;
+  height: 285px;
   border-radius: 10px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.35s ease, box-shadow 0.3s ease;
 }
 
 .slide img:hover {
   transform: scale(1.06);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
 }
 
+/* Arrows positioned OUTSIDE the container */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   border: none;
   color: #58a6ff;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: bold;
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 2;
   transition: all 0.3s ease;
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(88,166,255,0.3);
 }
 
+/* Completely outside */
 .arrow.left {
-  left: 10px;
+  left: -55px;
 }
 
 .arrow.right {
-  right: 10px;
+  right: -55px;
 }
 
 .arrow:hover {
-  background: rgba(88,166,255,0.25);
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 15px rgba(88,166,255,0.5);
   transform: translateY(-50%) scale(1.1);
 }
 
 .dots {
   text-align: center;
-  margin: 15px 0;
+  margin-top: 15px;
 }
 
 .dot {
@@ -140,7 +141,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 h2 {
   font-size: 1.6em;
   margin-bottom: 20px;
-  color: #fff;
 }
 </style>
 
