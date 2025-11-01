@@ -56,6 +56,9 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 .pub-carousel {
   position: relative;
   overflow: hidden;
+  padding: 0 60px; /* adds space for arrows */
+  background-color: #2e2e2e; /* optional: matches your screenshot’s dark bg */
+  border-radius: 10px;
 }
 
 .slides {
@@ -68,44 +71,37 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 15px;
 }
 
 .slide img {
-  width: 210px;
-  height: 285px;
+  width: 260px;
+  height: 350px;
   border-radius: 10px;
   object-fit: cover;
-  object-position: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
 .arrow {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.85);
   border: none;
   color: #58a6ff;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: bold;
-  padding: 6px 12px;
+  padding: 5px 12px;
   border-radius: 50%;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
   z-index: 2;
-}
-
-.arrow:hover {
-  background: rgba(88,166,255,0.15);
-  transform: translateY(-50%) scale(1.1);
+  transition: all 0.3s ease;
 }
 
 .arrow.left {
@@ -116,16 +112,21 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   right: 10px;
 }
 
+.arrow:hover {
+  background: rgba(88,166,255,0.25);
+  transform: translateY(-50%) scale(1.1);
+}
+
 .dots {
   text-align: center;
-  margin-top: 15px;
+  margin: 15px 0;
 }
 
 .dot {
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: #ccc;
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -139,6 +140,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 h2 {
   font-size: 1.6em;
   margin-bottom: 20px;
+  color: #fff;
 }
 </style>
 
@@ -180,5 +182,3 @@ dots.forEach((dot, i) => {
 
 setInterval(nextSlide, 5000);
 </script>
-
-
