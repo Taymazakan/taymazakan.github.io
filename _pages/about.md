@@ -14,7 +14,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   <h2>Featured Publications</h2>
 
   <div class="pub-carousel">
-    <button class="arrow left">&#10094;</button>
     <div class="slides">
       <div class="slide">
         <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
@@ -37,7 +36,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
         </a>
       </div>
     </div>
-    <button class="arrow right">&#10095;</button>
 
     <div class="dots">
       <span class="dot active"></span>
@@ -50,7 +48,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 #featured-publications {
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
 }
 
 .pub-carousel {
@@ -68,54 +65,18 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
 }
 
 .slide img {
-  width: 210px;
-  height: 285px;
+  width: 260px;
+  height: 350px;
   border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.35s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.06);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-}
-
-/* Arrows positioned OUTSIDE the container */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  color: #58a6ff;
-  font-size: 34px;
-  font-weight: bold;
-  padding: 5px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 3;
-  box-shadow: 0 0 10px rgba(88,166,255,0.3);
-}
-
-/* Completely outside */
-.arrow.left {
-  left: -55px;
-}
-
-.arrow.right {
-  right: -55px;
-}
-
-.arrow:hover {
-  background: rgba(255,255,255,1);
-  box-shadow: 0 0 15px rgba(88,166,255,0.5);
-  transform: translateY(-50%) scale(1.1);
+  transform: scale(1.05);
 }
 
 .dots {
@@ -127,7 +88,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: #ccc;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -147,8 +108,6 @@ h2 {
 <script>
 const slidesContainer = document.querySelector('.slides');
 const dots = document.querySelectorAll('.dot');
-const leftArrow = document.querySelector('.arrow.left');
-const rightArrow = document.querySelector('.arrow.right');
 let currentIndex = 0;
 const slidesPerView = 3;
 const totalSlides = document.querySelectorAll('.slide').length;
@@ -160,19 +119,6 @@ function showSlides(index) {
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalPages;
-  showSlides(currentIndex);
-}
-
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalPages) % totalPages;
-  showSlides(currentIndex);
-}
-
-rightArrow.addEventListener('click', nextSlide);
-leftArrow.addEventListener('click', prevSlide);
-
 dots.forEach((dot, i) => {
   dot.addEventListener('click', () => {
     currentIndex = i;
@@ -180,5 +126,9 @@ dots.forEach((dot, i) => {
   });
 });
 
-setInterval(nextSlide, 5000);
+// Auto slide every 5 seconds
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % totalPages;
+  showSlides(currentIndex);
+}, 5000);
 </script>
