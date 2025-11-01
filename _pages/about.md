@@ -14,6 +14,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   <h2>Featured Publications</h2>
 
   <div class="pub-carousel">
+    <button class="arrow left">&#10094;</button>
     <div class="slides">
       <div class="slide">
         <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
@@ -36,6 +37,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
         </a>
       </div>
     </div>
+    <button class="arrow right">&#10095;</button>
 
     <div class="dots">
       <span class="dot active"></span>
@@ -48,6 +50,7 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 #featured-publications {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 .pub-carousel {
@@ -65,18 +68,52 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .slide img {
   width: 210px;
   height: 285px;
   border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .slide img:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  color: #58a6ff;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 2;
+}
+
+.arrow:hover {
+  background: rgba(88,166,255,0.15);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
 }
 
 .dots {
@@ -108,6 +145,8 @@ h2 {
 <script>
 const slidesContainer = document.querySelector('.slides');
 const dots = document.querySelectorAll('.dot');
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
 let currentIndex = 0;
 const slidesPerView = 3;
 const totalSlides = document.querySelectorAll('.slide').length;
@@ -119,6 +158,19 @@ function showSlides(index) {
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
 
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalPages;
+  showSlides(currentIndex);
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + totalPages) % totalPages;
+  showSlides(currentIndex);
+}
+
+rightArrow.addEventListener('click', nextSlide);
+leftArrow.addEventListener('click', prevSlide);
+
 dots.forEach((dot, i) => {
   dot.addEventListener('click', () => {
     currentIndex = i;
@@ -126,11 +178,7 @@ dots.forEach((dot, i) => {
   });
 });
 
-// Auto slide every 5 seconds
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % totalPages;
-  showSlides(currentIndex);
-}, 5000);
+setInterval(nextSlide, 5000);
 </script>
 
 
