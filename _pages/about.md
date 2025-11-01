@@ -69,7 +69,10 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slides-wrapper {
-  overflow: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
 }
 
 .slides {
