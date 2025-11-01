@@ -69,17 +69,13 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
 }
 
 .slides-wrapper {
-  overflow-x: hidden;
-  overflow-y: visible;
-  padding: 15px 0;
-  margin: -15px 0;
+  overflow: hidden;
 }
 
 .slides {
   display: flex;
   transition: transform 0.6s ease;
   gap: 20px;
-  overflow: visible;
 }
 
 .slide {
@@ -87,12 +83,6 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: visible;
-}
-
-.slide a {
-  display: block;
-  overflow: visible;
 }
 
 .slide img {
@@ -101,13 +91,10 @@ I am a postdoctoral fellow at Louisiana State University Health Sciences Center 
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
-  display: block;
 }
 
 .slide img:hover {
   transform: scale(1.05);
-  z-index: 100;
-  position: relative;
 }
 
 .arrow {
@@ -183,8 +170,10 @@ const totalSlides = document.querySelectorAll('.slide').length;
 const totalPages = Math.ceil(totalSlides / slidesPerView);
 
 function showSlides(index) {
-  // Simple calculation: move by 100% for each page
-  const offset = index * 100;
+  // Calculate the offset including the gap
+  const slideWidth = 100 / slidesPerView;
+  const gapPercentage = (20 / slidesContainer.parentElement.offsetWidth) * 100;
+  const offset = index * (slideWidth * slidesPerView + gapPercentage * (slidesPerView - 1));
   slidesContainer.style.transform = `translateX(-${offset}%)`;
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
 }
