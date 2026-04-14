@@ -179,12 +179,13 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
     <span class="dot active" onclick="goToSlide(0)"></span>
     <span class="dot" onclick="goToSlide(1)"></span>
     <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
   </div>
 </section>
 
 <script>
 let currentPosition = 0;
-const totalPages = 3;
+const totalPages = 4;
 const slides = document.getElementById('slides');
 const dots = document.querySelectorAll('.dot');
 
