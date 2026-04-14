@@ -159,7 +159,12 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
           <a href="https://www.sciencedirect.com/science/article/pii/S0022510X2600119X" target="_blank">
             <img src="/images/papers/Modeling_inter-slice.png" alt="Modeling inter-slice">
           </a>
-        </div>        
+        </div> 
+        <div class="carousel-slide">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0002944025004080" target="_blank">
+            <img src="/images/papers/Pathvit.png" alt="Pathvit">
+          </a>
+        </div>  
       </div>
     </div>
 
