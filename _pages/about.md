@@ -157,8 +157,7 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
           <a href="https://www.sciencedirect.com/science/article/pii/S0022510X2600119X" target="_blank">
             <img src="/images/papers/Modeling_inter-slice.png" alt="Modeling inter-slice">
           </a>
-        </div>
-        
+        </div>        
       </div>
     </div>
 
@@ -177,7 +176,7 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
 
 <script>
 let currentPosition = 0;
-const totalPages = 2;
+const totalPages = 3;
 const slides = document.getElementById('slides');
 const dots = document.querySelectorAll('.dot');
 
