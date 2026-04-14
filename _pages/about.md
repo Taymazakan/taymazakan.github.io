@@ -114,6 +114,8 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
       transition: background 0.3s;
     }
 
+    
+
     .dot.active {
       background: #58a6ff;
     }
@@ -171,6 +173,7 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
   <div class="dots">
     <span class="dot active" onclick="goToSlide(0)"></span>
     <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
   </div>
 </section>
 
