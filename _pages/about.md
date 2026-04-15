@@ -164,6 +164,11 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
           <a href="https://www.sciencedirect.com/science/article/pii/S0002944025004080" target="_blank">
             <img src="/images/papers/Pathvit.png" alt="Pathvit">
           </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="https://www.sciencedirect.com/science/article/pii/S2667102625000804" target="_blank">
+            <img src="/images/papers/ADViViT.png" alt="ADViViT">
+          </a>
         </div>  
       </div>
     </div>
@@ -180,12 +185,13 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
     <span class="dot" onclick="goToSlide(1)"></span>
     <span class="dot" onclick="goToSlide(2)"></span>
     <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
   </div>
 </section>
 
 <script>
 let currentPosition = 0;
-const totalPages = 4;
+const totalPages = 5;
 const slides = document.getElementById('slides');
 const dots = document.querySelectorAll('.dot');
 
