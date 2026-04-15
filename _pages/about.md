@@ -136,23 +136,8 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
     <div class="carousel-track">
       <div class="carousel-slides" id="slides">
         <div class="carousel-slide">
-          <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
-            <img src="/images/papers/Alzhformer.png" alt="AlzhFormer">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="https://www.nature.com/articles/s41598-024-59578-3" target="_blank">
-            <img src="/images/papers/JointTransformer.png" alt="JointTransformer">
-          </a>
-        </div>
-        <div class="carousel-slide">
           <a href="https://www.sciencedirect.com/science/article/pii/S0022510X25003557" target="_blank">
             <img src="/images/papers/NeuroDeepReview.png" alt="NeuroDeepReview">
-          </a>
-        </div>
-        <div class="carousel-slide">
-          <a href="https://link.springer.com/article/10.1007/s10278-024-01336-y" target="_blank">
-            <img src="/images/papers/ViViEchoformer.png" alt="ViViEchoformer">
           </a>
         </div>
         <div class="carousel-slide">
@@ -169,7 +154,22 @@ I am a senior AI Research Scientist at Louisiana State University Health Science
           <a href="https://www.sciencedirect.com/science/article/pii/S2667102625000804" target="_blank">
             <img src="/images/papers/ADViViT.png" alt="ADViViT">
           </a>
-        </div>  
+        </div>
+        <div class="carousel-slide">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0306452225009108?ssrnid=5276922&dgcid=SSRN_redirect_SD" target="_blank">
+            <img src="/images/papers/Alzhformer.png" alt="AlzhFormer">
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="https://www.nature.com/articles/s41598-024-59578-3" target="_blank">
+            <img src="/images/papers/JointTransformer.png" alt="JointTransformer">
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="https://link.springer.com/article/10.1007/s10278-024-01336-y" target="_blank">
+            <img src="/images/papers/ViViEchoformer.png" alt="ViViEchoformer">
+          </a>
+        </div>
       </div>
     </div>
 
